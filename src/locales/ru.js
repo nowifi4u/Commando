@@ -381,7 +381,7 @@ exports.commands = {
 		},
 		ping: {
 			constructor: {
-				description: "'Проверяет пинг бота к Discord серверу."
+				description: 'Проверяет пинг бота к Discord серверу.'
 			},
 			run: {
 				pinging: 'Пингую...',
