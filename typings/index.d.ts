@@ -161,6 +161,7 @@ declare module 'discord.js-commando' {
 		public responsePositions: { [key: string]: number } | null;
 		public responses: { [key: string]: CommandoMessage[] } | null;
 		public readonly guild: CommandoGuild;
+		public readonly locale: Object;
 
 		private deleteRemainingResponses(): void;
 		private editCurrentResponse(id: string, options: MessageEditOptions | Exclude<MessageAdditions, MessageAttachment>): Promise<CommandoMessage | CommandoMessage[]>;
@@ -195,6 +196,7 @@ declare module 'discord.js-commando' {
 
 		private _commandPrefix: string;
 
+		public locale: Object;
 		public commandPrefix: string;
 		public dispatcher: CommandDispatcher;
 		public options: CommandoClientOptions;
@@ -220,6 +222,7 @@ declare module 'discord.js-commando' {
 		private _settings: GuildSettingsHelper;
 
 		public commandPrefix: string;
+		public locale: Object;
 		public readonly settings: GuildSettingsHelper;
 
 		public commandUsage(command?: string, user?: User): string;
@@ -406,6 +409,7 @@ declare module 'discord.js-commando' {
 		guarded?: boolean;
 		hidden?: boolean;
 		unknown?: boolean;
+		readBots?: boolean;
 	}
 
 	interface CommandoClientEvents extends ClientEvents {
@@ -438,6 +442,7 @@ declare module 'discord.js-commando' {
 		nonCommandEditable?: boolean;
 		owner?: string | string[] | Set<string>;
 		invite?: string;
+		readBots?: boolean;
 	}
 
 	type CommandResolvable = Command | string;
